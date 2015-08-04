@@ -1,0 +1,89 @@
+    
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript" src="js/sync/PushNotification.js"></script> 
+    <script type="text/javascript" src="js/sync/index.js"></script>  
+    
+    <script>
+        $(document).ready(function () {
+            $("#URL_SINCRONIZAR").val(syncServer);
+            app.initialize();
+        });
+
+        function fijarUsuario(CODINTERNO, NOMBRE) {
+            $("#CODIGOINTERNO").val(CODINTERNO);
+            $("#NOMBRE").val(NOMBRE);
+        }
+    </script>
+    <br>
+    <div class="container">
+        <div class="btn-group btn-group-justified" role="group" aria-label="..."  style='margin-bottom: 5px; margin-top: 0px;'>
+        <div class="btn-group" role="group" aria-label="...">
+        <img src="images/logosoyoda.png" style='width:30%; padding-bottom:10px;'>
+        </div>
+        <div class="btn-group" role="group" aria-label="..." style="text-align:right; font-size:14px;"><strong style='font-size:15px; color:#005FAA; text-decoration:underline;'>Configuraci&oacute;n Inicial de Usuario</strong></div>
+        </div>
+        <hr />
+        <form action='javascript:GuardarUsuario()'>
+        <br />
+        <br />
+        <div class="input-group">
+            <input type="text"  autofocus="" required="" placeholder="Url de Sincronizacion" class="form-control" id="URL_SINCRONIZAR">
+            <span class="input-group-btn">
+            <button class="btn btn-danger" type="button" onclick="Test()">Test...</button>
+            </span>
+        </div>
+        <br/>
+
+        <div class="input-group">
+            <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Colaborador <span class="caret"></span></button>
+            <ul class="dropdown-menu" id='lista_usuarios'>                    
+            </ul>
+            </div><!-- /btn-group -->
+            <input type="text" class="form-control" aria-label="..." disabled="disabled" id='NOMBRE'>
+            <input type="hidden" class="form-control" aria-label="..." disabled="disabled" id='CODIGOINTERNO'>
+        </div><!-- /input-group -->
+
+        <br/>
+
+        <label class="sr-only" for="inputEmail">Ingresar Usuario</label>
+        <input type="text" autofocus="" required="" placeholder="Ingresar Usuario para Aplicacion" class="form-control" id="USUARIO">
+        <br />
+
+        <label class="sr-only" for="inputEmail">Ingresar Contrasena</label>
+        <input type="password" autofocus="" required="" placeholder="Ingresar Contrasena para Aplicacion" class="form-control" id="CLAVE">
+        <br />
+
+        <label class="sr-only" for="inputEmail">Ingresar Usuario</label>
+        <input type="password" autofocus="" required="" placeholder="Ingresar Contrasena Administrador" class="form-control" id="CLAVEADMIN">
+        <br />
+
+        <label class="sr-only" for="inputEmail">Google</label>
+        <input type="text" autofocus="" required="" placeholder="ID GOOGLE" class="form-control" disabled="disabled" id='IDGOOGLE'>
+        <br />
+            
+        <div class="app" style='display:none'> 
+            <h1>PhoneGap</h1>
+            <div id="deviceready" class="blink"> 
+                <p class="event listening">Connecting to Device</p> 
+                <p class="event received">Device is Ready</p> 
+            </div>   
+        </div> 
+
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon">
+            <input type="checkbox" checked="checked" aria-label="..." id='ACEPTADISPOSE'>
+            </span>
+            <input type="text" class="form-control" aria-label="..." disabled="disabled" value="Acepto Realizar una Carga Inicial de datos...">
+        </div>            
+        <br />
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Guardar</button>
+        </form>
+    </div>
+    
+    <div class="floatbottom" style='position:absolute; bottom:0px; right:0px;' onclick="MaterPage('pages/login.html');">
+        <button type="button" class="btn btn-primary btn-lg">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        </button>
+    </div>

@@ -1,0 +1,60 @@
+    
+
+    <script>
+        $(document).ready(function () {
+            //CONSULTA DE ESTADO DE USUARIO
+            BDConsulta("SELECT COUNT(*)CONT FROM TBL_USUARIO", function (obj) {
+                if (obj.CONT > 0) {
+                    BDConsulta("SELECT * FROM TBL_USUARIO", function (obj) {
+                        if (obj.ACTIVO == 'A') {
+                            MaterPage('pages/main.html');
+                        }
+                    });
+                } else {
+                    alert("Por favor Realizar la Configuracion de la aplicacion...");
+                }
+            });
+        });
+
+    </script>
+
+    <div class="container">
+        <br/>
+        <div class="btn-group btn-group-justified" role="group" aria-label="..."  style='margin-bottom: 5px; margin-top: 0px;'>
+        <div class="btn-group" role="group" aria-label="..." style="text-align:left; font-size:14px;"><strong style='font-size:15px; color:#005FAA; text-decoration:underline;'>GVS - Gesti&oacute;n de Ventas Soyoda</strong> </div>
+        <div class="btn-group" role="group" aria-label="..." ></div>
+        </div>
+        <br />
+
+        <div class="btn-group btn-group-justified" role="group" aria-label="..." >
+        <div class="btn-group" role="group" aria-label="..."></div>
+        <div class="btn-group" role="group" aria-label="..."><img src="images/logosoyoda.png" width="100%"></div>
+        <div class="btn-group" role="group" aria-label="..."></div>
+        </div>
+
+        <form class="form-signin" action="javascript:Login()">
+        <br />
+        <br />
+        
+        <label class="sr-only" for="inputEmail">Ingresar Usuario</label>
+        <input type="text" autofocus="" required="" placeholder="Ingresar Usuario" class="form-control" id="txt_usuario">
+        <br />
+
+        <label class="sr-only" for="inputPassword">Ingresar Contrase&ntilde;a</label>
+        <input type="password" required="" placeholder="Ingresar Contrase&ntilde;a" class="form-control" id="txt_pass">
+        <br/>
+        <br/>
+        
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Ingresar</button>
+        </form>
+    </div>
+
+    <div class="floatbottom" style='position:absolute; bottom:0px;'>
+        <img src="images/petalosfooter.png">
+    </div>
+
+    <div class="floatbottom" style='position:absolute; bottom:0px; right:0px;' onclick="MaterPage('pages/config.html');">
+        <button type="button" class="btn btn-primary btn-lg">
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+        </button>
+    </div>

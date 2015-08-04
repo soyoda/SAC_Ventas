@@ -1,0 +1,69 @@
+
+#services 
+{
+  color: #fff;
+}
+
+#services .glyphicon 
+{
+  border: 2px solid #FFF;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 60px;
+  height: 140px;
+  line-height: 140px;
+  text-align: center;
+  vertical-align: middle;
+  width: 140px;
+}
+
+h3 
+{
+    margin-top: 0;
+}
+
+.tabs-left {
+    margin-top: 0;
+}
+
+.nav-tabs {
+    float: left;
+    border-bottom: 0;
+}
+
+.nav-tabs li {
+    float: none;
+    margin: 0;
+}
+.nav-tabs li a {
+    margin-right: 0;
+    border: 0;
+    background-color: #337ab7;
+    border-radius: 0px;
+}
+.nav-tabs li a:hover {
+    background-color: #005FAA;
+}
+.nav-tabs .glyphicon {
+    color: #fff;
+}
+.nav-tabs .active .glyphicon {
+    color: #333;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border: 0;
+}
+
+.tab-content {
+    margin-left: 45px;
+}
+.tab-content .tab-pane {
+    display: none;
+    background-color: #fff;
+    padding: 1.6rem;
+    overflow-y: auto;
+}
+.tab-content .active {
+    display: block;
+}
